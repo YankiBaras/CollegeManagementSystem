@@ -8,14 +8,17 @@ from class_room import ClassRoom
 
 
 def main():
+    class_room_A = ClassRoom('A')
+    student1 = Student('Moshe', 1, 'A')
+    class_room_A.add_student(student1)
     college = College('MeGo')
-    student1 = Student('Moshe', 1)
-    teacher1 = Teacher('Hime', 'math')
+
+    teacher1 = Teacher('Hime', 2, 'math')
 
     college.add_student(student1)
     college.add_teacher(teacher1)
-    for i in college.get_students():
-        print(i.name)
+    for i in college.get_teachers():
+        print(i.get_details())
 
 
 
