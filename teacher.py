@@ -15,5 +15,5 @@ class Teacher(Person):
     def course(self, value):
         self._course = value
 
-     def get_details(self):
-            return f"{super().get_details()}, course: {self._course}"
+    def get_details(self):
+        return f"{super().get_details()}, course: {self._course}"
