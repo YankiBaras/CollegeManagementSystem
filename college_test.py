@@ -14,6 +14,9 @@ def main():
 
     college.add_student(student1)
     college.add_teacher(teacher1)
+    for i in college.get_students():
+        print(i.student_id)
+
 
 
 main()
