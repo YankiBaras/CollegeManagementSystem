@@ -2,15 +2,18 @@ from person import Person
 
 
 class Teacher(Person):
-    def __init__(self, name, address, age, subject):
-        super().__init__(name, age, address)
-        self._subject = subject
+    def __init__(self, name, personal_id, course):
+        super().__init__(name, personal_id)
+        self._course = course
+        self._students = []
 
     @property
-    def subject(self):
-        return self._subject
+    def course(self):
+        return self._course
 
-    @subject.setter
-    def subject(self, value):
-        self._subject = value
+    @course.setter
+    def course(self, value):
+        self._course = value
 
+     def get_details(self):
+            return f"{super().get_details()}, course: {self._course}"

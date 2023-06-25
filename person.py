@@ -1,8 +1,7 @@
 class Person:
-    def __init__(self, name, address, age):
+    def __init__(self, name, personal_id):
         self._name = name
-        self._address = address
-        self._age = age
+        self._personal_id = personal_id
 
     @property
     def name(self):
@@ -13,17 +12,8 @@ class Person:
         self._name = value
 
     @property
-    def address(self):
-        return self._address
+    def personal_id(self):
+        return self._personal_id
 
-    @address.setter
-    def address(self, value):
-        self._address = value
-
-    @property
-    def age(self):
-        return self._age
-
-    @age.setter
-    def age(self, value):
-        self._age = value
+    def get_details(self):
+        return f"Name: {self._name}, Age: {self._personal_id}"
