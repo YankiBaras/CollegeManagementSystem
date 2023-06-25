@@ -16,4 +16,4 @@ class Person:
         return self._personal_id
 
     def get_details(self):
-        return f"Name: {self._name}, Age: {self._personal_id}"
+        return f"Name: {self._name}, Personal_id: {self._personal_id}"
