@@ -13,6 +13,12 @@ class College:
     def name(self, value):
         self.__name = value
 
+    def get_students(self):
+        return self.__students
+
+    def get_teachers(self):
+        return self.__teachers
+
     def add_student(self,student):
         self.__students.append(student)
 
@@ -24,3 +30,4 @@ class College:
 
     def remove_teacher(self, teacher):
         self.__teachers.remove(teacher)
+
