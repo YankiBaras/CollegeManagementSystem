@@ -16,3 +16,20 @@ class Course:
     def course_name(self):
         return self.__course_name
 
+    @property
+    def course_students(self):
+        return self.__course_students
+
+    @property
+    def course_teacher(self):
+        return self.__teacher
+
+    @course_teacher.setter
+    def course_teacher(self, teacher):
+        if teacher.course == self.__course_name:
+            self.__teacher = teacher
+        else:
+            print("No match")
+
+
+
