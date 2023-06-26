@@ -4,26 +4,39 @@ class College:
         self.__name = name
         self.__students = []
         self.__teachers = []
+        self.__classrooms = []
 
     @property
     def name(self):
-        return self.name
+        return self.__name
 
     @name.setter
     def name(self, value):
         self.__name = value
 
-    def get_students(self):
+    @property
+    def students(self):
         return self.__students
 
-    def get_teachers(self):
-        return self.__teachers
-
-    def add_student(self,student):
+    @students.setter
+    def students(self,student):
         self.__students.append(student)
 
-    def add_teacher(self, teacher):
+    @property
+    def teachers(self):
+        return self.__teachers
+
+    @teachers.setter
+    def teachers(self, teacher):
         self.__teachers.append(teacher)
+
+    @property
+    def classrooms(self):
+        return self.__classrooms
+
+    @classrooms.setter
+    def classrooms(self, classroom):
+        self.__classrooms.append(classroom)
 
     def remove_student(self, student):
         self.__students.remove(student)
@@ -31,3 +44,5 @@ class College:
     def remove_teacher(self, teacher):
         self.__teachers.remove(teacher)
 
+    def remove_classroom(self, classroom):
+        self.__classrooms.remove(classroom)
