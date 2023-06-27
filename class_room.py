@@ -1,6 +1,5 @@
 from collectionmanager import CollectionManager
 from student import Student
-from college import College
 
 
 class ClassRoom(CollectionManager):
@@ -8,7 +7,7 @@ class ClassRoom(CollectionManager):
         super().__init__()
         self._name = name
         self.classroom_courses = []
-        College.classrooms[self] = self.collection
+        self._college.classrooms[self] = self.collection
 
     @property
     def name(self):
