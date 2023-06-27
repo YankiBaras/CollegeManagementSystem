@@ -1,7 +1,10 @@
 class Person:
-    def __init__(self, name, personal_id):
+    id_auto_increment = 1
+
+    def __init__(self, name):
         self._name = name
-        self._personal_id = personal_id
+        self._personal_id = Person.id_auto_increment
+        Person.id_auto_increment += 1
 
     @property
     def name(self):
