@@ -7,7 +7,6 @@ class ClassRoom(CollectionManager):
         super().__init__()
         self._name = name
         self.classroom_courses = []
-        self._college.classrooms[self] = self.collection
 
     @property
     def name(self):

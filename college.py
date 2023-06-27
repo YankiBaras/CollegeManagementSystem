@@ -16,6 +16,11 @@ class College:
     def name(self, value):
         self.__name = value
 
+    def get_classroom(self, classroom_name):
+        for i in self.classrooms:
+            if i.name == classroom_name:
+                return i
+
     def add_classroom(self, name):
         self.classrooms.append(ClassRoom(name))
         self.student_of_classroom[ClassRoom(name)] = ClassRoom(name).collection
@@ -28,5 +33,4 @@ class College:
         for student in swapped_dict:
             if student.personal_id == personal_id:
                 return swapped_dict[student].name
-
 
