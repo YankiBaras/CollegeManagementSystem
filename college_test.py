@@ -8,6 +8,7 @@ from class_room import ClassRoom
 
 
 def main():
+
     college = College('MeGo')
 
     class_room_A = ClassRoom('A')

@@ -2,9 +2,8 @@ from person import Person
 
 
 class Student(Person):
-    def __init__(self, name, personal_id, classroom):
+    def __init__(self, name, personal_id):
         super().__init__(name, personal_id)
-        self._classroom = classroom
         self._courses = []
         self._grades = {}
         self._qualification = {}
@@ -20,3 +19,4 @@ class Student(Person):
     def get_detailed(self):
         return f"{super().get_details()}, Classroom: {self._classroom}, courses: {self._courses}"
 
+print(__name__)

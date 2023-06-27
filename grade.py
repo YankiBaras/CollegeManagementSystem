@@ -16,4 +16,3 @@ class Grade:
                 return dic
         return self.__grade
 
-
