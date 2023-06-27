@@ -2,10 +2,10 @@ from person import Person
 
 
 class Teacher(Person):
-    def __init__(self, name, personal_id, course):
-        super().__init__(name, personal_id)
+    def __init__(self, name, course):
+        super().__init__(name)
         self._course = course
-        self._students = []
+
 
     @property
     def course(self):
@@ -17,3 +17,5 @@ class Teacher(Person):
 
     def get_details(self):
         return f"{super().get_details()}, course: {self._course}"
+
+
