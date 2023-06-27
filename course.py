@@ -5,6 +5,7 @@ class Course:
     def __init__(self, course_name, course_subject):
         self.__course_name = course_name
         self.__course_subject = course_subject
+        self.__teacher = None
 
 
     @property
@@ -30,10 +31,8 @@ class Course:
 
     @course_teacher.setter
     def course_teacher(self, teacher):
-        if teacher.course == self.__course_name:
-            self.__teacher = teacher
-        else:
-            print("No match")
+        self.__teacher = teacher
+
 
 
 
