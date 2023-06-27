@@ -18,6 +18,11 @@ class ClassRoom(CollectionManager):
     def add_course(self, course):
         self.classroom_courses.append(course)
 
+    def get_student(self, name):
+        for i in self.collection:
+            if i.name == name:
+                return i
+
     def print_courses(self):
         for course in self.classroom_courses:
             print(course.course_name)

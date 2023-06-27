@@ -6,7 +6,10 @@ class College:
     def __init__(self, name):
         self.__name = name
         self.classrooms = []
+        self.teachers = []
         self.student_of_classroom = {}
+        self.student_of_teachers = {}
+
 
     @property
     def name(self):
