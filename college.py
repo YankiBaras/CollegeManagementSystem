@@ -2,7 +2,7 @@ import sqlite3
 
 
 class College:
-
+    classrooms = {}
     def __init__(self, name):
         #con = sqlite3.connect("college.db")
         #college_details = con.cursor()
@@ -37,13 +37,8 @@ class College:
     def teachers(self, teacher):
         self.__teachers.append(teacher)
 
-    @property
-    def classrooms(self):
-        return self.__classrooms
 
-    @classrooms.setter
-    def classrooms(self, classroom):
-        self.__classrooms.append(classroom)
+
 
     def remove_student(self, student):
         self.__students.remove(student)
@@ -53,3 +48,10 @@ class College:
 
     def remove_classroom(self, classroom):
         self.__classrooms.remove(classroom)
+
+    def get_class(self, id):
+        swapped_dict = {student: cls for cls, students in College.classrooms.items() for student in students}
+        for student in swapped_dict:
+            if student.personal_id == id:
+                return swapped_dict[student].name
+
