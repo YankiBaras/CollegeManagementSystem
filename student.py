@@ -1,10 +1,10 @@
 from person import Person
 from grade import Grade
 
+
 class Student(Person):
-    def __init__(self, name, classroom):
+    def __init__(self, name):
         super().__init__(name)
-        self._classroom = classroom
         self._courses = []
         self.grade = Grade(self._personal_id, name)
         self._qualification = {}
