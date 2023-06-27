@@ -1,10 +1,17 @@
+import sqlite3
+
+
 class College:
 
     def __init__(self, name):
-        self.__name = name
+        #con = sqlite3.connect("college.db")
+        #college_details = con.cursor()
         self.__students = []
         self.__teachers = []
         self.__classrooms = []
+        #self.collection_manger = CollectionManager()
+
+
 
     @property
     def name(self):

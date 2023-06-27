@@ -20,8 +20,8 @@ def main():
     student1 = Student('Moshe', 1, 'A')
     student2 = Student('Michael', 4, 'B')
 
-    course1 = Course(1, 'java', 'Software')
-    course2 = Course(2, 'statistics', 'math')
+    course1 = Course('java', 'Software')
+    course2 = Course('statistics', 'math')
 
     course1.course_students = student1
     course2.course_students = student2
@@ -45,6 +45,7 @@ def main():
 
     print(student1_grades.get_grades(1))
     print(student2_grades.get_grades(4))
+    print(class_room_A.class_student)
     
 
 main()
