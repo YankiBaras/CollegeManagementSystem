@@ -6,6 +6,7 @@ class College:
     def __init__(self, name):
         #con = sqlite3.connect("college.db")
         #college_details = con.cursor()
+        self.__name = name
         self.__students = []
         self.__teachers = []
         self.__classrooms = []
