@@ -2,7 +2,7 @@ from collectionmanager import CollectionManager
 from student import Student
 
 
-class  StudentsManager(CollectionManager):
+class StudentsManager(CollectionManager):
     classes = []
 
     def __init__(self):
