@@ -1,18 +1,24 @@
-from collectionmanager import CollectionManager
+class ClassRoom:
 
+    def __init__(self, id, course):
+        self.__classroomID = id
+        self.classroom_course = course
+        self.__classroom_students = []
+        self.__classroom_courses = []
 
-class ClassRoom(CollectionManager):
-    def __init__(self, name):
-        super().__init__(name)
-        self.classroom_courses = []
+    @property
+    def class_student(self):
+        for s in self.__classroom_students:
+            return s.name
 
-    def add_student(self, name):
-        self.collection.append(Student(name))
+    @class_student.setter
+    def class_student(self, student):
+        self.__classroom_students.append(student)
 
     def add_course(self, course):
-        self.classroom_courses.append(course)
+        self.__classroom_courses = course
 
-    def print_courses(self):
-        for course in self.classroom_courses:
-            print(course.course_name)
+    def get_courses(self):
+        for course in self.__classroom_courses:
+            return course
 
