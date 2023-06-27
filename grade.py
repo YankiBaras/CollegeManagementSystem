@@ -1,10 +1,8 @@
 import sqlite3
 
 class Grade:
-    #con = sqlite3.connect("college.db")
-    #college_details = con.cursor()
-    #college_details.execute("CREATE TABLE IF NOT EXISTS grades(name, student_id, course, grade)")
     students_grades = []
+
     def __init__(self, student_id, student_name):
         self.__student_id = student_id
         self.__student_name = student_name
