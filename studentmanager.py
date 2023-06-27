@@ -3,8 +3,12 @@ from student import Student
 
 
 class  StudentsManager(CollectionManager):
+    classes = []
+
     def __init__(self):
         super().__init__()
+
+
 
 
 
