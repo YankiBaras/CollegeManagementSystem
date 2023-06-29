@@ -31,12 +31,13 @@ def main():
     yakov = college.get_classroom('AA').get_student('yakov')
 
     moshe.grade.update_grade(86, 'java')
-    moshe.grade.update_grade(70,'python')
+    moshe.grade.update_grade(70,'math')
 
     #college.get_classroom('AA').add_course('java')
     print(college.get_courses('moshe'))
     print(college.get_students())
-    #print(college.collection)
+    print(moshe.grade.get_grades())
+    print(college.get_teachers())
 
 
 main()

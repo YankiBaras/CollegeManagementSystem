@@ -27,6 +27,6 @@ class ClassRoom(CollectionManager):
     def get_courses(self):
         courses = []
         for course in self.classroom_courses:
-            courses.append(course.name)
+            courses.append(course)
         return courses
 

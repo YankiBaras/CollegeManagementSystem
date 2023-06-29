@@ -43,14 +43,18 @@ class College:
     def get_courses(self, name):
         for cla in self.classrooms:
             if cla.get_student(name).name == name:
-                return cla.get_courses()
+                courses = cla.get_courses()
+                return list(course.name for course in courses)
 
     def get_teachers(self):
         teachers = []
         for cla in self.classrooms:
-            for course in cla.get_courses:
-                for elem in course.collection:
-                    teachers.append((elem.get_details()))
+            for course in cla.get_courses():
+                if len(course.teacher) == 0:
+                    return "No teachers were found in the college"
+                else:
+                    for elem in course.teacher:
+                        teachers.append((elem.get_details()))
         return teachers
 
     def get_students(self):

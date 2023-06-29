@@ -3,13 +3,12 @@ from teacher import Teacher
 from collectionmanager import CollectionManager
 
 
-
-class Course(CollectionManager):
+class Course:
 
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
-        self.__teacher = None
+        self.__teacher = []
 
     @property
     def name(self):
@@ -25,7 +24,7 @@ class Course(CollectionManager):
 
     @teacher.setter
     def teacher(self, name):
-        self.collection.append(self)
+        self.__teacher.append(Teacher(name))
 
 
 
