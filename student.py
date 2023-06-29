@@ -1,15 +1,17 @@
 from person import Person
-from grade import Grade
+from gradesheet import GradeSheet
 
 
 class Student(Person):
     def __init__(self, name):
         super().__init__(name)
-        self.grade = Grade(self._personal_id, name)
+        self.grades = GradeSheet(self._personal_id, self.name)
         self._qualification = {}
 
     def get_detailed(self):
         return f"{super().get_details()}"
+
+
 
 
 
