@@ -5,9 +5,7 @@ class College:
         super().__init__()
         self.__name = name
         self.classrooms = []
-        self.teachers = []
-        self.student_of_classroom = {}
-        self.student_of_teachers = {}
+
 
     @property
     def name(self):
@@ -19,7 +17,6 @@ class College:
 
     def add_classroom(self, name):
         self.classrooms.append(ClassRoom(name))
-        self.student_of_classroom[ClassRoom(name)] = ClassRoom(name).collection
 
     def get_classroom(self, classroom_name):
         for i in self.classrooms:
@@ -100,7 +97,7 @@ class GradeSheet:
         self.__grades = {}
 
     def update_grade(self, course, grade):
-        if course not in self.__grades and course in College.get_student_class(, self.__student_id).get_courses():
+        if course not in self.__grades and course in College.get_student_class(self.__student_id).get_courses():
             self.__grades[course] = grade
 
     def get_grades(self):

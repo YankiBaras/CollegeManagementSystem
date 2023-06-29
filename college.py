@@ -1,7 +1,6 @@
 from class_room import ClassRoom
 
 
-
 class College:
     students = []
 
@@ -20,7 +19,6 @@ class College:
 
     def add_classroom(self, name):
         self.classrooms.append(ClassRoom(name))
-        self.student_of_classroom[ClassRoom(name)] = ClassRoom(name).collection
 
     def get_classroom(self, classroom_name):
         for i in self.classrooms:
@@ -46,13 +44,11 @@ class College:
         teachers = []
         for cla in self.classrooms:
             for course in cla.get_courses():
-                if len(course.teacher) == 0:
-                    return "No teachers were found in the college"
-                else:
-                    for elem in course.teacher:
-                        teachers.append((elem.get_details()))
-        return teachers
-
+                for elem in course.get_teacher():
+                    teachers.append(elem)
+        if len(teachers) > 0:
+            return teachers
+        return 'No teachers were found in the college'
     def get_students(self):
         students = []
         for cla in self.classrooms:
@@ -61,6 +57,8 @@ class College:
         return students
 
     def is_teachers_student(self, teacher_id, student_id):
-        for clas in self.classrooms:
-            for course in self.get_student_class(student_id):
-                return
+        for course in self.get_student_class(student_id):
+            for teacher in course.get_teacher():
+                if teacher.personal_id == teacher_id:
+                    return True
+        return False

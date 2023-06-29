@@ -7,15 +7,15 @@ class Teacher(Person):
 
     @property
     def name(self):
-        return self.name
+        return self._name
 
     @property
     def personal_id(self):
-        return self.personal_id
+        return self._personal_id
 
 
     def get_details(self):
-        return f"{super().get_details()}, course: {self._course}"
+        return f"{super().get_details()}"
 
 
 

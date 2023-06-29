@@ -7,7 +7,7 @@ class Course(CollectionManager):
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
-        self.__teacher = None
+        self.__teachers = []
 
     @property
     def name(self):
@@ -17,13 +17,14 @@ class Course(CollectionManager):
     def name(self, name):
         self.__name = name
 
-    @property
-    def teacher(self):
-        return self.__teacher
+    def get_teacher(self):
+        teachers = []
+        for teacher in self.__teachers:
+            teachers.append(teacher.get_details())
+        return teachers
 
-    @teacher.setter
-    def teacher(self, name):
-        self.collection.append(self)
+    def add_teacher(self, name):
+        self.__teachers.append(Teacher(name))
 
 
 

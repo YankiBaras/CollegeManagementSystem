@@ -1,6 +1,6 @@
 from student import Student
 from teacher import Teacher
-from grade import Grade
+from gradesheet import GradeSheet
 from person import Person
 from college import College
 from course import Course
@@ -27,17 +27,21 @@ def main():
     college.get_classroom('BB').add_course('math')
     college.get_classroom('BB').add_course('english')
 
+    college.get_classroom('AA').get_course('java').add_teacher('barak')
+    college.get_classroom('AA').get_course('python').add_teacher('yoav')
+
     moshe = college.get_classroom('AA').get_student('moshe')
     yakov = college.get_classroom('AA').get_student('yakov')
 
-    moshe.grade.update_grade(86, 'java')
-    moshe.grade.update_grade(70,'math')
+    moshe.grades.update_grade(86, 'java')
+    moshe.grades.update_grade(70,'math')
 
     #college.get_classroom('AA').add_course('java')
     print(college.get_courses('moshe'))
     print(college.get_students())
-    print(moshe.grade.get_grades())
+    print(college.get_classroom('AA').get_course('java').get_teacher())
     print(college.get_teachers())
+    print(moshe.grades.get_grades())
 
 
 main()

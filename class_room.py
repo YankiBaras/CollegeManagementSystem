@@ -16,6 +16,13 @@ class ClassRoom(CollectionManager):
     def add_student(self, name):
         self.collection.append(Student(name))
 
+
+    def get_course(self, course):
+        for cou in self.classroom_courses:
+            if cou.name == course:
+                return cou
+
+
     def add_course(self, course):
         self.classroom_courses.append(Course(course))
 
