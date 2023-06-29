@@ -1,14 +1,13 @@
-import sqlite3
 from teacher import Teacher
 from collectionmanager import CollectionManager
 
 
-class Course:
+class Course(CollectionManager):
 
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
-        self.__teacher = []
+        self.__teacher = None
 
     @property
     def name(self):
@@ -24,7 +23,9 @@ class Course:
 
     @teacher.setter
     def teacher(self, name):
-        self.__teacher.append(Teacher(name))
+        self.collection.append(self)
+
+
 
 
 
