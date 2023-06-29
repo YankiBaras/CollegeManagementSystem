@@ -5,47 +5,38 @@ from person import Person
 from college import College
 from course import Course
 from class_room import ClassRoom
+from collectionmanager import CollectionManager
+from studentmanager import StudentsManager
+from teacher_manager import TeachersManager
 
 
 def main():
 
     college = College('MeGo')
 
-    class_room_A = ClassRoom('A')
-    class_room_B = ClassRoom('B')
+    college.add_classroom('AA')
+    college.add_classroom('BB')
 
-    college.classrooms = class_room_A
-    college.classrooms = class_room_B
+    college.get_classroom('AA').add_student('moshe')
+    college.get_classroom('AA').add_student('yakov')
+    college.get_classroom('BB').add_student('israel')
+    college.get_classroom('BB').add_student('yosi')
 
-    student1 = Student('Moshe', 1, 'A')
-    student2 = Student('Michael', 4, 'B')
+    college.get_classroom('AA').add_course('java')
+    college.get_classroom('AA').add_course('python')
+    college.get_classroom('BB').add_course('math')
+    college.get_classroom('BB').add_course('english')
 
-    course1 = Course('java', 'Software')
-    course2 = Course('statistics', 'math')
+    moshe = college.get_classroom('AA').get_student('moshe')
+    yakov = college.get_classroom('AA').get_student('yakov')
 
-    course1.course_students = student1
-    course2.course_students = student2
+    moshe.grade.update_grade(86, 'java')
+    moshe.grade.update_grade(70,'python')
 
-    teacher1 = Teacher('Hime', 2, 'math')
-    teacher2 = Teacher('Ronen', 3, 'English')
+    #college.get_classroom('AA').add_course('java')
+    print(college.get_courses('moshe'))
+    print(college.get_students())
+    #print(college.collection)
 
-    class_room_A.class_student = student1
-    class_room_B.class_student = student2
-
-    college.students = student1
-    college.students = student2
-
-    college.teachers = teacher1
-    college.teachers = teacher2
-
-    student1_grades = Grade(1, 'Moshe')
-    student1_grades.update_grade(95, 'java')
-    student2_grades = Grade(4, 'Michael')
-    student2_grades.update_grade(89, 'statistics')
-
-    print(student1_grades.get_grades(1))
-    print(student2_grades.get_grades(4))
-    print(class_room_A.class_student)
-    
 
 main()

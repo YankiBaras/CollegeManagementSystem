@@ -6,5 +6,5 @@ class TeachersManager(CollectionManager):
     def __init__(self):
         super().__init__()
 
-    def add(self, name, course):
-        self.collection.append(Teacher(name, course))
+    def add(self, name):
+        self.collection.append(Teacher(name))

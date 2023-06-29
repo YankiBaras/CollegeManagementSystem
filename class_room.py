@@ -1,5 +1,6 @@
 from collectionmanager import CollectionManager
 from student import Student
+from course import Course
 
 
 class ClassRoom(CollectionManager):
@@ -16,16 +17,16 @@ class ClassRoom(CollectionManager):
         self.collection.append(Student(name))
 
     def add_course(self, course):
-        self.classroom_courses.append(course)
+        self.classroom_courses.append(Course(course))
 
     def get_student(self, name):
         for i in self.collection:
             if i.name == name:
                 return i
 
-    def print_courses(self):
+    def get_courses(self):
+        courses = []
         for course in self.classroom_courses:
-            print(course.course_name)
-
-
+            courses.append(course.name)
+        return courses
 

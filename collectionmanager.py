@@ -12,3 +12,5 @@ class CollectionManager:
             print(instance.get_detailed())
 
 
+    def get_collection(self):
+        return self.collection
