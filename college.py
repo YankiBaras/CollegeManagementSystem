@@ -9,9 +9,6 @@ class College:
         super().__init__()
         self.__name = name
         self.classrooms = []
-        self.teachers = []
-        self.student_of_classroom = {}
-        self.student_of_teachers = {}
 
     @property
     def name(self):
@@ -34,10 +31,10 @@ class College:
         self.classrooms.remove(classroom)
 
     def get_student_class(self, personal_id):
-        swapped_dict = {student: cls for cls, students in self.student_of_classroom.items() for student in students}
-        for student in swapped_dict:
-            if student.personal_id == personal_id:
-                return swapped_dict[student].name
+        for classroom in self.classrooms:
+            for student in classroom.collection:
+                if student.personal_id == personal_id:
+                    return classroom.name
 
     def get_courses(self, name):
         for cla in self.classrooms:
@@ -58,3 +55,8 @@ class College:
             for elem in cla.collection:
                 students.append((elem.get_details()))
         return students
+
+    def is_teachers_student(self, teacher_id, student_id):
+        for clas in self.classrooms:
+            for course in self.get_student_class(student_id):
+                return

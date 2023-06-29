@@ -13,7 +13,7 @@ class Student(Person):
 
     @property
     def personal_id(self):
-        return self.personal_id
+        return self._personal_id
 
     @property
     def name(self):
