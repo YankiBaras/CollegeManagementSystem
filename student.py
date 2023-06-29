@@ -11,6 +11,14 @@ class Student(Person):
     def get_detailed(self):
         return f"{super().get_details()}"
 
+    @property
+    def personal_id(self):
+        return self.personal_id
+
+    @property
+    def name(self):
+        return self._name
+
 
 
 

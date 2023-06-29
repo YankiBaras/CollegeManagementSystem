@@ -1,7 +1,3 @@
-from class_room import ClassRoom
-
-
-
 class College:
     students = []
 

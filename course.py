@@ -1,4 +1,3 @@
-import sqlite3
 from teacher import Teacher
 from collectionmanager import CollectionManager
 
