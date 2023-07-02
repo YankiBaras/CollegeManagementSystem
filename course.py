@@ -1,25 +1,18 @@
 from teacher import Teacher
-from teacher_manager import TeachersManager
+from collectionmanager import CollectionManager
 
 
-class Course(TeachersManager):
+class Course(CollectionManager):
 
-    def __init__(self, course_name):
-        super().__init__()
-        self.__name = course_name
+    def __init__(self, name):
+        super().__init__(name)
         self.__teacher = None
 
-    @property
-    def name(self):
-        return self.__name
 
-    @name.setter
-    def name(self, name):
-        self.__name = name
 
     def add_teacher(self, name):
         teacher = Teacher(name)
-        teacher.course = self.__name
+        teacher.course = self.name
         self.__teacher = teacher
         self.collection.append(teacher)
 
