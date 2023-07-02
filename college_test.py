@@ -53,5 +53,7 @@ def main():
     teacher = Teacher('meni')
     teacher.course = 'math'
     print(teacher.course)
+    moshe.qualified.update_qualified('math', 7)
+    print(moshe.qualified.qualified)
 
 main()

@@ -36,9 +36,9 @@ class College:
 
     def get_courses(self, name):
         for cla in self.classrooms:
-            if cla.get_student_name(name).name == name:
+            if cla.get_student(name).name == name:
                 courses = cla.get_courses()
-                return list(course.name for course in courses)
+                return set(list(course.name for course in courses))
 
     def get_teachers(self):
         teachers_ob = []

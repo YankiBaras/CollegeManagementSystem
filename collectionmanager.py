@@ -2,6 +2,7 @@ class CollectionManager:
     def __init__(self):
         self.collection = []
 
+
     def remove(self, personal_id):
         for item in self.collection:
             if item.personal_id == personal_id:

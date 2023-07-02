@@ -1,5 +1,6 @@
 from person import Person
 from gradesheet import GradeSheet
+from qualification import Qualification
 
 
 class Student(Person):
@@ -7,7 +8,7 @@ class Student(Person):
         super().__init__(name)
         self._grades = GradeSheet(self._personal_id, self.name)
         self.__class_room = None
-        self._qualification = {}
+        self._qualified = Qualification()
 
     def get_detailed(self):
         return f"{super().get_details()}, class room: {self.__class_room}"
@@ -33,6 +34,10 @@ class Student(Person):
     @class_room.setter
     def class_room(self, name):
         self.__class_room = name
+
+    @property
+    def qualified(self):
+        return self._qualified
 
 
 
