@@ -7,7 +7,7 @@ class Course(TeachersManager):
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
-        self._classroom = None
+        self.__teacher = None
 
     @property
     def name(self):
@@ -20,7 +20,11 @@ class Course(TeachersManager):
     def add_teacher(self, name):
         teacher = Teacher(name)
         teacher.course = self.__name
+        self.__teacher = teacher
         self.collection.append(teacher)
+
+    def get_teacher(self):
+        return self.__teacher
 
     def get_teachers(self):
         teachers = []

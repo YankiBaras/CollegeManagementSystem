@@ -18,20 +18,16 @@ class ClassRoom(CollectionManager):
         student.class_room = self._name
         self.collection.append(student)
 
-    def get_student(self, personal_id):
-        for i in self.collection:
-            if i.personal_id == personal_id:
-                return i
-
-    def get_student_name(self, name):
+    def get_student(self, name):
         for i in self.collection:
             if i.name == name:
                 return i
 
-    def add_course(self, name):
-        course = Course(name)
-        course._classroom = self._name
-        self.classroom_courses.append(course)
+    def add_course(self, course):
+        for cou in self.classroom_courses:
+            if course == cou.name:
+                return "The course already exists in this class"
+        self.classroom_courses.append(Course(course))
 
     def get_course(self, course):
         for cou in self.classroom_courses:
