@@ -49,6 +49,7 @@ class College:
         if len(teachers) > 0:
             return teachers
         return 'No teachers were found in the college'
+
     def get_students(self):
         students = []
         for cla in self.classrooms:
