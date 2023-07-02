@@ -3,11 +3,14 @@ from gradesheet import GradeSheet
 
 
 class Student(Person):
+    all_students = []
+
     def __init__(self, name):
         super().__init__(name)
         self._grades = GradeSheet(self._personal_id, self.name)
         self.__class_room = None
         self._qualification = {}
+        Student.all_students.append(self)
 
     def get_detailed(self):
         return f"{super().get_details()}, class room: {self.__class_room}"
@@ -24,7 +27,6 @@ class Student(Person):
     @property
     def name(self):
         return self._name
-
 
     @property
     def class_room(self):

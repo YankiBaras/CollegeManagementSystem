@@ -5,7 +5,7 @@ from course import Course
 
 class ClassRoom(CollectionManager):
     def __init__(self, name):
-        super().__init__()
+        super().__init__(name)
         self._name = name
         self.classroom_courses = []
 

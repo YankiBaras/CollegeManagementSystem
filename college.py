@@ -2,10 +2,8 @@ from class_room import ClassRoom
 
 
 class College:
-    students = []
 
     def __init__(self, name):
-        super().__init__()
         self.__name = name
         self.classrooms = []
 

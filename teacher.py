@@ -19,7 +19,7 @@ class Teacher(Person):
         return self.__course
 
     @course.setter
-    def course(self,name):
+    def course(self, name):
         self.__course = name
 
     def get_details(self):
