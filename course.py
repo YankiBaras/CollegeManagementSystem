@@ -7,6 +7,7 @@ class Course(TeachersManager):
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
+        self._classroom = None
 
     @property
     def name(self):

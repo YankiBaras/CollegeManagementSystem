@@ -36,7 +36,7 @@ class College:
 
     def get_courses(self, name):
         for cla in self.classrooms:
-            if cla.get_student(name).name == name:
+            if cla.get_student_name(name).name == name:
                 courses = cla.get_courses()
                 return list(course.name for course in courses)
 
@@ -63,3 +63,18 @@ class College:
                 if teacher.personal_id == teacher_id:
                     return True
         return False
+
+    def average_of_course(self, course, name):
+        len1 = 0
+        sum1 = 0
+        class_room = self.get_classroom(name)
+        for stu in class_room.collection:
+            if course in stu.grades.grades:
+                len1 += 1
+                sum1 += stu.grades.grades[course]
+        try:
+            return sum1 / len1
+        except ZeroDivisionError:
+            print("There isn't students in this course")
+
+

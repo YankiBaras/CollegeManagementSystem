@@ -6,7 +6,6 @@ class Person:
         self._personal_id = Person.id_auto_increment
         Person.id_auto_increment += 1
 
-
     @property
     def name(self):
         return self._name
