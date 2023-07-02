@@ -9,7 +9,7 @@ class GradeSheet:
             self.__grades[course] = grade
 
     def get_grades(self):
-        return f'id: {self.__student_id}, name: {self.__student_name} {self.__grades}'
+        return f"ID: {self.__student_id}, Name: {self.__student_name}, Grade Sheet: {self.__grades}"
 
     def average(self):
         average = 0
