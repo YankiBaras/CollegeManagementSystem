@@ -29,6 +29,8 @@ def main():
 
     college.get_classroom('AA').get_course('java').add_teacher('barak')
     college.get_classroom('AA').get_course('python').add_teacher('yoav')
+    barak = college.get_classroom('AA').get_course('java').get_teacher()
+    yoav = college.get_classroom('AA').get_course('python').get_teacher()
 
     moshe = college.get_classroom('AA').get_student('moshe')
     yakov = college.get_classroom('AA').get_student('yakov')
@@ -43,6 +45,13 @@ def main():
     print(college.get_teachers())
     print(moshe.class_room)
     print(college.is_teachers_student(6, 4))
+    for course in college.get_classroom('AA').get_courses():
+        print(course.name)
 
+    print(college.get_teachers())
+ 
+    teacher = Teacher('meni')
+    teacher.course = 'math'
+    print(teacher.course)
 
 main()

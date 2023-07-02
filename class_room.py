@@ -24,6 +24,9 @@ class ClassRoom(CollectionManager):
                 return i
 
     def add_course(self, course):
+        for cou in self.classroom_courses:
+            if course == cou.name:
+                return "The course already exists in this class"
         self.classroom_courses.append(Course(course))
 
     def get_course(self, course):
