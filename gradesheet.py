@@ -2,14 +2,18 @@ class GradeSheet:
     def __init__(self, student_id, student_name):
         self.__student_id = student_id
         self.__student_name = student_name
-        self.__grades = {}
+        self._grades = {}
 
     def update_grade(self, course, grade):
-        if course not in self.__grades:
-            self.__grades[course] = grade
+        if course not in self._grades:
+            self._grades[course] = grade
 
-    def get_grades(self):
-        return f"ID: {self.__student_id}, Name: {self.__student_name}, Grade Sheet: {self.__grades}"
+    @property
+    def grades(self):
+        return self._grades
+
+    def get_detail_grades(self):
+        return f"ID: {self.__student_id}, Name: {self.__student_name}, Grade Sheet: {self._grades}"
 
     def average(self):
         average = 0
