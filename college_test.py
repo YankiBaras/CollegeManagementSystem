@@ -39,9 +39,10 @@ def main():
     #college.get_classroom('AA').add_course('java')
     print(college.get_courses('moshe'))
     print(college.get_students())
-    print(college.get_classroom('AA').get_course('java').get_teacher())
+    print(college.get_classroom('AA').get_course('java').get_teachers())
     print(college.get_teachers())
-    print(moshe.grades.get_grades())
+    print(moshe.class_room)
+    print(college.is_teachers_student(6, 4))
 
 
 main()

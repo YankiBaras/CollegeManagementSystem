@@ -1,13 +1,12 @@
 from teacher import Teacher
-from collectionmanager import CollectionManager
+from teacher_manager import TeachersManager
 
 
-class Course(CollectionManager):
+class Course(TeachersManager):
 
     def __init__(self, course_name):
         super().__init__()
         self.__name = course_name
-        self.__teachers = []
 
     @property
     def name(self):
@@ -17,14 +16,24 @@ class Course(CollectionManager):
     def name(self, name):
         self.__name = name
 
-    def get_teacher(self):
+    def add_teacher(self, name):
+        teacher = Teacher(name)
+        teacher.course = self.__name
+        self.collection.append(teacher)
+
+    def get_teachers(self):
         teachers = []
-        for teacher in self.__teachers:
+        for teacher in self.collection:
             teachers.append(teacher.get_details())
         return teachers
 
-    def add_teacher(self, name):
-        self.__teachers.append(Teacher(name))
+    def get_teachers_instance(self):
+        teachers = []
+        for teacher in self.collection:
+            teachers.append(teacher)
+        return teachers
+
+
 
 
 

@@ -41,14 +41,15 @@ class College:
                 return list(course.name for course in courses)
 
     def get_teachers(self):
-        teachers = []
+        teachers_ob = []
         for cla in self.classrooms:
             for course in cla.get_courses():
-                for elem in course.get_teacher():
-                    teachers.append(elem)
-        if len(teachers) > 0:
-            return teachers
+                for elem in course.get_teachers():
+                    teachers_ob.append(elem)
+        if len(teachers_ob) > 0:
+            return teachers_ob
         return 'No teachers were found in the college'
+
     def get_students(self):
         students = []
         for cla in self.classrooms:
@@ -57,8 +58,8 @@ class College:
         return students
 
     def is_teachers_student(self, teacher_id, student_id):
-        for course in self.get_student_class(student_id):
-            for teacher in course.get_teacher():
+        for course in self.get_classroom(self.get_student_class(student_id)).get_courses():
+            for teacher in course.get_teachers_instance():
                 if teacher.personal_id == teacher_id:
                     return True
         return False
