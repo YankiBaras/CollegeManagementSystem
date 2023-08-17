@@ -8,8 +8,6 @@ class Course(CollectionManager):
         super().__init__(name)
         self.__teacher = None
 
-
-
     def add_teacher(self, name):
         teacher = Teacher(name)
         teacher.course = self.name

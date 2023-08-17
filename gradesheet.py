@@ -4,9 +4,9 @@ class GradeSheet:
         self.__student_name = student_name
         self._grades = {}
 
-    def update_grade(self, course, grade):
-        if course not in self._grades:
-            self._grades[course] = grade
+    def update_grade(self, course_name, grade):
+        if course_name not in self._grades:
+            self._grades[course_name] = grade
 
     @property
     def grades(self):

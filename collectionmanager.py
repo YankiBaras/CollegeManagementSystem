@@ -11,6 +11,10 @@ class CollectionManager:
     def name(self, name):
         self._name = name
 
+    def add(self, instance):
+        self.collection.append(instance)
+
+
     def remove_by_id(self, personal_id):
         for item in self.collection:
             if item.personal_id == personal_id:

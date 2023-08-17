@@ -1,13 +1,6 @@
-from student import Student
-from teacher import Teacher
-from gradesheet import GradeSheet
-from person import Person
+
 from college import College
-from course import Course
-from class_room import ClassRoom
-from collectionmanager import CollectionManager
-from studentmanager import StudentsManager
-from teacher_manager import TeachersManager
+
 
 
 def main():
@@ -49,11 +42,6 @@ def main():
         print(course.name)
 
     print(college.get_teachers())
- 
-    teacher = Teacher('meni')
-    teacher.course = 'math'
-    print(teacher.course)
-    moshe.qualified.update_qualified('math', 7)
-    print(moshe.qualified.qualified)
+
 
 main()

@@ -16,7 +16,8 @@ class ClassRoom(CollectionManager):
     def add_student(self, name):
         student = Student(name)
         student.class_room = self._name
-        self.collection.append(student)
+        super().add(student)
+        #self.collection.append(student)
 
     def get_student(self, name):
         for i in self.collection:
